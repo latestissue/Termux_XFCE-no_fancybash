@@ -58,10 +58,10 @@ timezone=$(getprop persist.sys.timezone)
 pd login debian --shared-tmp -- env DISPLAY=:1.0 rm /etc/localtime
 pd login debian --shared-tmp -- env DISPLAY=:1.0 cp /usr/share/zoneinfo/$timezone /etc/localtime
 
-#Setup Fancybash Proot
-cp .fancybash.sh $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
-echo "source ~/.fancybash.sh" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
-sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fancybash.sh
+#Setup  Proot
+cp ..sh $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
+echo "source ~/..sh" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
+sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/..sh
 
 wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/conky.tar.gz
 tar -xvzf conky.tar.gz

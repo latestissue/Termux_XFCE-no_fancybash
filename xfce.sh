@@ -70,12 +70,12 @@ mv NotoColorEmoji-Regular.ttf .fonts
 wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
-#Setup Fancybash Termux
-wget https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/fancybash.sh
-mv fancybash.sh .fancybash.sh
-echo "source $HOME/.fancybash.sh" >> $PREFIX/etc/bash.bashrc
-sed -i "326s/\\\u/$username/" $HOME/.fancybash.sh
-sed -i "327s/\\\h/termux/" $HOME/.fancybash.sh
+#Setup  Termux
+wget https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/.sh
+mv .sh ..sh
+echo "source $HOME/..sh" >> $PREFIX/etc/bash.bashrc
+sed -i "326s/\\\u/$username/" $HOME/..sh
+sed -i "327s/\\\h/termux/" $HOME/..sh
 
 #Autostart Conky and Flameshot
 wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/config.tar.gz

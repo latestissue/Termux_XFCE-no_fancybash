@@ -43,12 +43,12 @@ mv NotoColorEmoji-Regular.ttf .fonts
 wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
-#Setup Fancybash Termux
-wget https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/fancybash.sh
-mv fancybash.sh .fancybash.sh
-echo "source $HOME/.fancybash.sh" >> $PREFIX/etc/bash.bashrc
-sed -i "326s/\\\u/$username/" $HOME/.fancybash.sh
-sed -i "327s/\\\h/termux/" $HOME/.fancybash.sh
+#Setup  Termux
+wget https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/.sh
+mv .sh ..sh
+echo "source $HOME/..sh" >> $PREFIX/etc/bash.bashrc
+sed -i "326s/\\\u/$username/" $HOME/..sh
+sed -i "327s/\\\h/termux/" $HOME/..sh
 
 #Autostart 
 #Create autostart directory
@@ -69,10 +69,10 @@ chmod +x $HOME/.config/autostart/*.desktop
 
 
 #Proot Theming
-#Setup Fancybash Proot
-cp .fancybash.sh $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
-echo "source ~/.fancybash.sh" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
-sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fancybash.sh
+#Setup  Proot
+cp ..sh $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
+echo "source ~/..sh" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
+sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/..sh
 
 wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/conky.tar.gz
 tar -xvzf conky.tar.gz
