@@ -334,7 +334,7 @@ mv NotoColorEmoji-Regular.ttf .fonts
 cp .fonts/NotoColorEmoji-Regular.ttf $HOME/../usr/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fonts/ 
 
 #Setup  Termux
-wget https://raw.githubusercontent.com/latestissue/Termux_XFCE-no_fancybash/main/.sh
+
 mv .sh ..sh
 echo "source $HOME/..sh" >> $HOME/.bashrc
 sed -i "326s/\\\u/$username/" $HOME/..sh

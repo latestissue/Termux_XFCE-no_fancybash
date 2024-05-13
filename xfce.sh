@@ -71,7 +71,7 @@ wget https://github.com/latestissue/Termux_XFCE-no_fancybash/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
 #Setup  Termux
-wget https://raw.githubusercontent.com/latestissue/Termux_XFCE-no_fancybash/main/.sh
+
 mv .sh ..sh
 echo "source $HOME/..sh" >> $PREFIX/etc/bash.bashrc
 sed -i "326s/\\\u/$username/" $HOME/..sh
