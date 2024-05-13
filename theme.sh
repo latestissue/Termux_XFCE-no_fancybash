@@ -45,10 +45,10 @@ mv font.ttf .termux/font.ttf
 
 #Setup  Termux
 
-mv .sh ..sh
-echo "source $HOME/..sh" >> $PREFIX/etc/bash.bashrc
-sed -i "326s/\\\u/$username/" $HOME/..sh
-sed -i "327s/\\\h/termux/" $HOME/..sh
+mv .sh 
+echo "source $HOME/" >> $PREFIX/etc/bash.bashrc
+sed -i "326s/\\\u/$username/" $HOME/
+sed -i "327s/\\\h/termux/" $HOME/
 
 #Autostart 
 #Create autostart directory
@@ -70,9 +70,9 @@ chmod +x $HOME/.config/autostart/*.desktop
 
 #Proot Theming
 #Setup  Proot
-cp ..sh $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
-echo "source ~/..sh" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
-sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/..sh
+cp  $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
+echo "source ~/" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
+sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/
 
 wget https://github.com/latestissue/Termux_XFCE-no_fancybash/raw/main/conky.tar.gz
 tar -xvzf conky.tar.gz

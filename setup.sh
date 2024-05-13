@@ -335,15 +335,15 @@ cp .fonts/NotoColorEmoji-Regular.ttf $HOME/../usr/var/lib/proot-distro/installed
 
 #Setup  Termux
 
-mv .sh ..sh
-echo "source $HOME/..sh" >> $HOME/.bashrc
-sed -i "326s/\\\u/$username/" $HOME/..sh
-sed -i "327s/\\\h/termux/" $HOME/..sh
+mv .sh 
+echo "source $HOME/" >> $HOME/.bashrc
+sed -i "326s/\\\u/$username/" $HOME/
+sed -i "327s/\\\h/termux/" $HOME/
 
 #Setup  Proot
-cp ..sh $HOME/../usr/var/lib/proot-distro/installed-rootfs/debian/home/$username
-echo "source ~/..sh" >> $HOME/../usr/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
-sed -i '327s/termux/proot/' $HOME/../usr/var/lib/proot-distro/installed-rootfs/debian/home/$username/..sh
+cp  $HOME/../usr/var/lib/proot-distro/installed-rootfs/debian/home/$username
+echo "source ~/" >> $HOME/../usr/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
+sed -i '327s/termux/proot/' $HOME/../usr/var/lib/proot-distro/installed-rootfs/debian/home/$username/
 
 wget https://github.com/latestissue/Termux_XFCE-no_fancybash/raw/main/font.ttf
 mv font.ttf .termux/font.ttf

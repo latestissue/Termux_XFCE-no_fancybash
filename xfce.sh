@@ -70,13 +70,6 @@ mv NotoColorEmoji-Regular.ttf .fonts
 wget https://github.com/latestissue/Termux_XFCE-no_fancybash/raw/main/font.ttf
 mv font.ttf .termux/font.ttf
 
-#Setup  Termux
-
-mv .sh ..sh
-echo "source $HOME/..sh" >> $PREFIX/etc/bash.bashrc
-sed -i "326s/\\\u/$username/" $HOME/..sh
-sed -i "327s/\\\h/termux/" $HOME/..sh
-
 #Autostart Conky and Flameshot
 wget https://github.com/latestissue/Termux_XFCE-no_fancybash/raw/main/config.tar.gz
 tar -xvzf config.tar.gz
