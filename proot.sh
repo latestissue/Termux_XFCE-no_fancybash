@@ -63,7 +63,7 @@ cp ..sh $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username
 echo "source ~/..sh" >> $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.bashrc
 sed -i '327s/termux/proot/' $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/..sh
 
-wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/conky.tar.gz
+wget https://github.com/latestissue/Termux_XFCE-no_fancybash/raw/main/conky.tar.gz
 tar -xvzf conky.tar.gz
 rm conky.tar.gz
 mkdir $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.config
@@ -81,5 +81,5 @@ mkdir $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fonts
 cp .fonts/NotoColorEmoji-Regular.ttf $PREFIX/var/lib/proot-distro/installed-rootfs/debian/home/$username/.fonts/ 
 
 #Setup Hardware Acceleration
-pd login debian --shared-tmp -- env DISPLAY=:1.0 wget https://github.com/phoenixbyrd/Termux_XFCE/raw/main/mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
+pd login debian --shared-tmp -- env DISPLAY=:1.0 wget https://github.com/latestissue/Termux_XFCE-no_fancybash/raw/main/mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
 pd login debian --shared-tmp -- env DISPLAY=:1.0 sudo apt install -y ./mesa-vulkan-kgsl_24.1.0-devel-20240120_arm64.deb
